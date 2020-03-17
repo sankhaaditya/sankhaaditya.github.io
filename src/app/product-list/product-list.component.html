@@ -1,6 +1,6 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
 	<a [routerLink]="['/products', productId]">
 		{{product.name}}
 	</a>
