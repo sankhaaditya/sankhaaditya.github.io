@@ -1,99 +1,151 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-		  <style>
-body, html {
-  height: 100%;
-  margin: 0;
-}
-.bg {
-  /* The image used */
-  background-image: url("IMG_8530.JPG");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Research Portfolio</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --text: #333;
+        }
 
-  /* Full height */
-  height: 100%; 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            color: var(--text);
+            background: var(--bg);
+        }
 
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.contain{
-    position: absolute;
-    top: 30%;
-    left: 5%;
-    margin-top: -50px;
-    margin-left: -50px;
-    width: 100px;
-    height: 100px;
-}​
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
 
-			#h {
-			  color: navy;
-			  padding: 5px;
-				font-family: verdana;
-  font-size: 300%;
-			}
-			#a {
-			  color: #FFEF78;
-			  padding: 5px;
-				font-family: verdana;
-  font-size: 500%;
-			}
-			#r {
-			  color: #A8E7E9;
-			  padding: 5px;
-				font-family: verdana;
-  font-size: 500%;
-			}
-			#i {
-			  color: #B1FFFD;
-			  padding: 5px;
-				font-family: verdana;
-  font-size: 500%;
-			}
-			#h {
-			  color: #EB92BE;
-			  padding: 5px;
-				font-family: verdana;
-  font-size: 500%;
-			}
-.heading{
-    position: absolute;
-    top: 5%;
-    left: 15%;
-			  color: #28FFBF;
-			  padding: 5px;
-				font-family: Brush Script MT;
-  font-size: 700%;
-}​
-		  </style>
-		<script type="text/javascript">
-			function over(id) {
-				match=false;
-				while(!match){
-					var random = Math.floor(Math.random() * words.length);
-					if (words[random][0] == id) {
-						document.getElementById(id).innerHTML=words[random].charAt(0).toUpperCase() + words[random].slice(1);
-						break;
-					}				
-				}
-			}
-			function out(id) {
-				document.getElementById(id).innerHTML=id.charAt(0).toUpperCase() + id.slice(1);
-			}
-const words=["hallowed","handsome","hardworking","hardy","harmless","harmonic","harmonious","heady","heartwarming","hearty","heavenly","helpful","heroic","hilarious","historical","holistic","homey","honest","honorable","hopeful","hot","huggable","human","humble","hospitable","idealistic","illuminating","illustrious","immaculate","immense","immortal","immovable","impartial","impassioned","impenetrable","impervious","important","impressive","improved","improving","inalienable","incandescent","inclusive","incomparable","incontrovertible","industrious","influential","informative","informed","ingenuous","inhabitable","innovative","inquisitive","insightful","invaluable","inviting","iridescent","abiding","abounding","academic","acceptable","accepting","accessible","acclaimed","accommodating","accountable","accurate","actionable","active","actual","adaptive","adequate","admirable","adored","advantageous","advisable","affectionate","agreeable","alert","alluring","amazed","amicable","amusing","appealing","appetizing","appreciative","approachable","appropriate","ardent","arresting","artful","artistic","aspiring","assertive","assured","assuring","astonishing","astounding","astronomical","astute","athletic","attainable","attractive","auspicious","authoritative","avid","awake","aware","racy","rad","radiant","rapid","rapturous","rational","razor-sharp","reachable","ready","resourceful","respectable","respectful","resplendent","responsible","responsive","restful","restorative","retentive","revealing","revered","reverent","revitalizing","revolutionary","rewardable","rewarding","rhapsodic","rich","right","righteous","rightful","risible","real","realistic","realizable","reasonable","reassuring","receptive","recherche","recipient","reciprocal","recognizable","recognized","recommendable","recuperative","red-carpet","refined","reflective","refreshing","refulgent","regal","regnant","regular","relaxed","relevant","reliable","relieved","remarkable","remissive","renowned","reputable","resilient","resolute","resolved","resounding"]
-		</script>
-	</head>
-	<body>
-<div class="bg">
-	<div class="heading">Happy Birthday Hari!!!</div>
-	<div class="contain">
-		<div id="h" onmouseover="over('h');" onmouseout="out('h');">H</div>
-		<div id="a" onmouseover="over('a');" onmouseout="out('a');">A</div>
-		<div id="r" onmouseover="over('r');" onmouseout="out('r');">R</div>
-		<div id="i" onmouseover="over('i');" onmouseout="out('i');">I</div>
-	</div>
+        nav {
+            background: #fff;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            background: white;
+            min-height: 60vh;
+            border-radius: 8px;
+            padding-top: 1rem;
+        }
+
+        .content-section { display: none; }
+        .active { display: block; animation: fadeIn 0.5s; }
+
+        .media-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        video, img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .pub-card {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Dr. Jane Doe</h1>
+    <p>Computational Physics | AI Researcher | Educator</p>
+</header>
+
+<nav>
+    <a onclick="showSection('bio')">Bio</a>
+    <a onclick="showSection('publications')">Publications</a>
+    <a onclick="showSection('projects')">Projects/Media</a>
+</nav>
+
+<div class="container">
+    <section id="bio" class="content-section active">
+        <h2>About Me</h2>
+        <p>Welcome! I am a researcher focused on [Your Field]. My work explores the intersection of [Topic A] and [Topic B].</p>
+        <img src="https://via.placeholder.com/150" alt="Profile" style="border-radius: 50%; width: 150px;">
+    </section>
+
+    <section id="publications" class="content-section">
+        <h2>Selected Publications</h2>
+        <div class="pub-card">
+            <strong>The Impact of Neural Networks on Fluid Dynamics</strong><br>
+            <em>Journal of Science, 2025</em><br>
+            <a href="#">Link to PDF</a>
+        </div>
+    </section>
+
+    <section id="projects" class="content-section">
+        <h2>Projects & Visualizations</h2>
+        
+        <div class="media-container">
+            <h3>Project Alpha: Real-time Simulation</h3>
+            <p>This GIF demonstrates the convergence of the algorithm:</p>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJpZzR6NHR6NHR6NHR6NHR6NHR6NHR6NHR6NHR6NHR6NHR6NHR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3o7TKMGpxx3228XF60/giphy.gif" alt="Project Animation">
+        </div>
+
+        <div class="media-container">
+            <h3>Project Beta: Data Flythrough</h3>
+            <p>Short video demonstration:</p>
+            <video controls>
+                <source src="movie.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
 </div>
-	</body>
+
+<script>
+    function showSection(id) {
+        // Hide all sections
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(s => s.classList.remove('active'));
+        
+        // Show the selected one
+        document.getElementById(id).classList.add('active');
+        
+        // Update URL hash without jumping
+        window.history.pushState(null, null, `#${id}`);
+    }
+
+    // Handle initial load based on URL hash
+    window.onload = () => {
+        const hash = window.location.hash.substring(1);
+        if (hash) showSection(hash);
+    };
+</script>
+
+</body>
 </html>
