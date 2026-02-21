@@ -75,6 +75,24 @@
             margin-bottom: 1.5rem;
         }
 
+        .video-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            position: relative;
+            height: 0;
+            margin-top: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .video-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
@@ -116,7 +134,7 @@
             
             <div class="video-responsive">
                 <iframe 
-                    src="https://youtu.be/twNhMMiR9w4?si=I34THAeRCPrtIYQd" 
+                    src="twNhMMiR9w4" 
                     title="YouTube video player" 
                     frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -156,6 +174,7 @@
 
 </body>
 </html>
+
 
 
 
